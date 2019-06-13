@@ -1,0 +1,4 @@
+<!-- Used for visualising arlobot in action. -->
+<launch>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find chefbot_bringup)/rviz/robot.rviz" />
+</launch>

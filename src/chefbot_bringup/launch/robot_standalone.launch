@@ -1,0 +1,14 @@
+<launch>
+
+  <!-- change this next line to include the launch file for your robot's hardware drivers: -->
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find chefbot_description)/urdf/chefbot.xacro'" />
+
+  <arg name="use_tf_static" default="false"/> 
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="10.0" />
+    <param name="use_tf_static" value="$(arg use_tf_static)"/>
+  </node>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" args="_use_gui:=False" />
+
+</launch>
